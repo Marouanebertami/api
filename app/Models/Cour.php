@@ -12,7 +12,7 @@ class Cour extends Model
 
     protected $guarded = [];
 
-    public function Categories(){
-        return $this->hasMany(Category::class, 'id', 'id_category');
+    public function Category(){
+        return $this->hasOne(Category::class, 'id', 'id_category');
     }
 }
