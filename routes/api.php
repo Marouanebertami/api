@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Cour;
+use App\Http\Controllers\CourController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/test', function(){
     var_dump(Cour::first()->Category->Children->titre);
 });
+
+// Routes for test
+Route::get('/getCour/{id}', [CourController::class, 'getCour']);
+Route::get('/getCours', [CourController::class, 'all']);
